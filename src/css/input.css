@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "ArchivoBlack";
+    src: url("../fonts/ArchivoBlack-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'InterRegular';
+    src: url(../fonts/static/Inter-Regular.ttf);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
