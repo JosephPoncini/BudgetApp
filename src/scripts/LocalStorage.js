@@ -1,3 +1,22 @@
+//-----Managing----------------------------------------------------------------------------------------
+const updateManagingStatusToLocalStorage = (managingStatus) => {
+    localStorage.setItem("Managing Status", JSON.stringify(managingStatus));
+}
+
+const getManagingStatuslocalStorage = () => {
+
+    let localStorageData = localStorage.getItem("Managing Status");
+
+    if (localStorageData == null) {
+        return [];
+    }
+
+    return  JSON.parse(localStorageData);
+
+}
+
+
+//-----Budget----------------------------------------------------------------------------------------
 const updateBudgetToLocalStorage = (budget) => {
     localStorage.setItem("Budget", JSON.stringify(budget));
 }
@@ -14,7 +33,7 @@ const getBudgetlocalStorage = () => {
 
 }
 
-//-----------------------------------------------------------------------------------------------------
+//-----Expenses---------------------------------------------------------------------------------------
 
 const saveExpenseToLocalStorage = (expense) => {
 
@@ -39,16 +58,14 @@ const getExpenselocalStorage = () => {
 
 }
 
-const removeExpenseFromLocalStorage = (expense) => {
+const removeExpenseFromLocalStorage = (index) => {
 
     let expenses = getExpenselocalStorage();
 
-    let namedIndex = expenses.indexOf(expense);
-
-    expenses.splice(namedIndex, 1);
+    expenses.splice(index, 1);
 
     localStorage.setItem("Expenses", JSON.stringify(expenses))
 
 }
 
-export {updateBudgetToLocalStorage, getBudgetlocalStorage, saveExpenseToLocalStorage, getExpenselocalStorage, removeExpenseFromLocalStorage}
+export {updateManagingStatusToLocalStorage, getManagingStatuslocalStorage, updateBudgetToLocalStorage, getBudgetlocalStorage, saveExpenseToLocalStorage, getExpenselocalStorage, removeExpenseFromLocalStorage}
