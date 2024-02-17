@@ -32,7 +32,7 @@ if(managing != true){
     managing = false;
 }
 if (managing) {
-    manageExpensesBtn.innerText = "Stop Managing";
+    manageExpensesBtn.innerText = "Stop Editing";
 } else {
     manageExpensesBtn.innerText = "Edit Expenses";
 }
